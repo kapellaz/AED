@@ -1,6 +1,6 @@
 import sys
 import time
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
 class Node:
   def __init__(self, nome, hashh, oferta):
@@ -171,7 +171,7 @@ def main(t):
 
     info = input().split()
 
-import numpy as np
+#import numpy as np
 sys.setrecursionlimit(8000)
 if __name__ == '__main__':
   sys.stdout = open("out.txt", 'w')
@@ -179,16 +179,16 @@ if __name__ == '__main__':
   t = splayT()
   sys.stdin = open("teste" + str(3500) + ".txt", 'r')
   main(t)
-  comp = 100
-  while comp <=3500:
+  comp = 100000
+  while comp <=1000000:
     sys.stdin=open("consulta"+str(comp)+".txt", 'r')
     start = time.time()
     main(t)
     end = time.time()
     times.append(end-start)
-    comp+=100
+    comp+=100000
+  sys.stdout=open("times.txt", 'w+')
   print(times)
-  times = np.array(times)
-  times=times*4000
-  plt.plot(times)
-  plt.show()
+  #times = np.array(times)
+  #plt.plot(times)
+  #plt.show()

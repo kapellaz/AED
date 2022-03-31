@@ -6,7 +6,7 @@ import numpy as np
 
 
 aux = 100
-maxi=4000
+maxi=3500
 comp = aux
 while comp <=maxi:
     sys.stdout=open("teste"+str(comp)+".txt", 'w')
@@ -19,10 +19,11 @@ while comp <=maxi:
     print("FIM")
     comp+=aux
 
+aux = 100000
 comp = aux
-while comp <=maxi:
-    consultas = np.random.choice(comp, int(comp*0.05), replace=False)
-    outros = [i for i in range(comp) if i not in consultas]
+while comp <=1000000:
+    consultas = np.random.choice(3500, int(3500*0.05), replace=False)
+    outros = [i for i in range(3500) if i not in consultas]
     consultas=list(consultas)
     teste=[]
 
@@ -31,7 +32,7 @@ while comp <=maxi:
             teste.append(j)
 
     random.shuffle(outros)
-    for p in range(comp-len(teste)):
+    for p in range(3500-len(teste)):
         teste.append(outros[p])
 
     random.shuffle(teste)
@@ -45,15 +46,15 @@ while comp <=maxi:
 
 
 
-comp = aux
-while comp <=maxi:
-    teste = [i for i in range(comp)]
+comp = 100000
+while comp <=1000000:
+    teste = np.random.choice(3500, comp)
     random.shuffle(teste)
     sys.stdout = open("1consulta" + str(comp) + ".txt", 'w')
     for j in range(len(teste)):
         print("CONSULTA " + "Pintura"+str(teste[j]))
     print("FIM")
-    comp+=aux
+    comp+=100000
 
 
 
