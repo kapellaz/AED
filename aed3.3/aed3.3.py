@@ -24,7 +24,7 @@ for i in range(len(y1)):
 x = [i for i in range(500000, 1050000, 50000)]
 
 print(x)
-plt.plot(x, y)
+plt.plot(x, y1)
 
 plt.show()
 
